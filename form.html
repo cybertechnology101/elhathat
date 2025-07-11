@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Form | Mouad El Hathat</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    form input, form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 1rem 2rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    #thankYouMessage {
+      display: none;
+      margin-top: 2rem;
+      color: #28a745;
+      font-size: 1.3rem;
+      text-align: center;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="contact" style="max-width:600px; margin: 3rem auto; padding: 1rem;">
+    <h2>📝 Contact Me</h2>
+
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div id="thankYouMessage">
+      🎉 Thank you for your message! I will get back to you soon
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const thankYou = document.getElementById('thankYouMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // منع إعادة تحميل الصفحة
+
+      // هنا تقدر تزيد ترسل البيانات عبر AJAX أو API إذا بغيتي
+
+      form.style.display = 'none';        // إخفاء الفورم
+      thankYou.style.display = 'block';   // إظهار رسالة الشكر
+    });
+  </script>
+
+</body>
+</html>
